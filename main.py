@@ -26,4 +26,12 @@ plt.xlabel('Head size (cm^3)')
 plt.ylabel('Brain weight(grams)')
 plt.legend()
 plt.show()
+RSS = 0
+TSS = 0
+for i in range(n):
+    y_prediction = (m * X[i]) + c
+    RSS += (Y[i] - y_prediction)**2
+    TSS += (Y[i] - mean_y)**2
+R_square = 1 - (RSS / TSS)
+print(f'the goodness of fitting is {R_square} percent')
 
